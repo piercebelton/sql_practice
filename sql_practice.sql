@@ -101,9 +101,28 @@ DELETE FROM person
   WHERE person_id = 2;
   -- deletes the entry from the person table where the person_id is 2
 
+INSERT INTO person
+  (person_id, fname, lname, gender, birth_date)
+  VALUES (1, 'Charles', 'Fulton', 'M', '1968-01-15');
+  -- fails due to duplicate entry error, a row with an ID of 1 already exists
 
+INSERT INTO favorite_food (person_id, food)
+  VALUES (999, 'lasagna');
+  -- fails due to nonexistent entry in 'person' table with a primary key of 999
 
+UPDATE person
+  SET gender = 'Z'
+  WHERE person_id = 1;
+  -- fails due to allowable values for 'gender' being only 'M' or 'F'
 
+UPDATE person
+  SET birth_date = 'DEC-21-1980'
+  WHERE person_id = 1;
+  -- fails due to invalid date format
+
+UPDATE person
+  SET birth_date = str_to_date('DEC-21-1980' , '%b-%d-%Y')
+  WHERE person_id = 1;
 
 
 
