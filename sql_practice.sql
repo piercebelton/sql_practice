@@ -82,6 +82,24 @@ INSERT INTO person
      street, city, state, country, postal_code)
   VALUES (null, 'Susan', 'Smith', 'F', '1975-11-02',
           '23 Maple St.', 'Arlington', 'VA', 'USA', '20220');
+    -- adds another entry to person table with values into associated columns. null ensures person ID will be auto-generated
+
+SELECT person_id, fname, lname, birth_date, street
+  FROM person;
+  -- retrieves the 4 columns from all entries of 'person' table
+
+UPDATE person
+  SET street = '1225 Tremont St.',
+      city = 'Boston',
+      state = 'MA',
+      country = 'USA',
+      postal_code = '02138'
+  WHERE person_id = 1;
+  -- updates the columns of the  'person' with id of 1 with values entered
+
+DELETE FROM person
+  WHERE person_id = 2;
+  -- deletes the entry from the person table where the person_id is 2
 
 
 
