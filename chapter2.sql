@@ -1,3 +1,9 @@
+ mysql -u lrngsql -p;
+  -- logs into mysql as user 'lrngsql'
+
+ use bank;
+  -- selects bank db for access
+
 SELECT now();
   -- shows current date and time
 
@@ -123,13 +129,11 @@ UPDATE person
 UPDATE person
   SET birth_date = str_to_date('DEC-21-1980' , '%b-%d-%Y')
   WHERE person_id = 1;
+  -- now succeeds because of a str_to_date function with 2 arguments
 
+DROP TABLE person;
+DROP TABLE favorite_food;
+  -- drops the tables used in prior examples, since we will be using bank DB going forward
 
-
-
-
-
-
-
-
-   buffer
+DESC customer;
+  -- simply shows info for the customer table
