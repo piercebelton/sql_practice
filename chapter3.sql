@@ -130,7 +130,8 @@ ORDER BY lname, fname;
 -- Exercise 3-2
 SELECT account_id, cust_id, avail_balance
 FROM account
-WHERE status = 'ACTIVE' AND avail_balance > 2500;
+WHERE status = 'ACTIVE'
+  AND avail_balance > 2500;
 
 -- Exercise 3-3
 SELECT DISTINCT open_emp_id
